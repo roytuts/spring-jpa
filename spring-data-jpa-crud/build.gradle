@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework:spring-core:5.2.8.RELEASE'
+	implementation 'org.springframework:spring-context:5.2.8.RELEASE'
+    implementation 'org.springframework.data:spring-data-jpa:2.3.3.RELEASE'
+    implementation 'org.hsqldb:hsqldb:2.5.1'
+    implementation 'org.hibernate.orm:hibernate-core:6.0.0.Alpha5'
+}
