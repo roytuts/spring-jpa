@@ -18,7 +18,7 @@ USE `roytuts`;
 
 -- Dumping structure for table roytuts.department
 CREATE TABLE IF NOT EXISTS `department` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned COLLATE utf8mb4_unicode_ci NOT NULL AUTO_INCREMENT,
   `name` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
@@ -35,11 +35,11 @@ INSERT INTO `department` (`id`, `name`, `description`) VALUES
 
 -- Dumping structure for table roytuts.employee
 CREATE TABLE IF NOT EXISTS `employee` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned COLLATE utf8mb4_unicode_ci NOT NULL AUTO_INCREMENT,
   `name` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dept_id` int(10) unsigned DEFAULT NULL,
+  `dept_id` int unsigned COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `dept_id` (`dept_id`),
   CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`dept_id`) REFERENCES `department` (`id`)
