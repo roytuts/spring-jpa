@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.2.6.RELEASE'
+		springBootVersion = '2.2.6.RELEASE' to 2.4.3
 	}
 	
     repositories {
@@ -29,7 +29,7 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
-	implementation('mysql:mysql-connector-java:8.0.17')
+	implementation('mysql:mysql-connector-java:8.0.17') //8.0.22
 	
 	//required for jdk 9 or above
 	runtimeOnly('javax.xml.bind:jaxb-api:2.4.0-b180830.0359')
