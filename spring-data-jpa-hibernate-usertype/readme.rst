@@ -1,1 +1,1 @@
-You can read tutorial https://www.roytuts.com/hibernate-usertype-example-using-spring-data-jpa/
+You can read tutorial https://roytuts.com/hibernate-usertype-example-using-spring-data-jpa/
