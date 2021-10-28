@@ -1,0 +1,1 @@
+Please follow the tutorial https://roytuts.com/bulk-update-using-spring-jpa-criteriaupdate/
