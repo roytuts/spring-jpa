@@ -1,0 +1,1 @@
+Please follow the tutorial https://roytuts.com/bulk-delete-using-spring-jpa-criteriadelete/
