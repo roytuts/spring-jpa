@@ -1,0 +1,1 @@
+Please follow the tutorial https://roytuts.com/spring-jpa-bidirectional-manytomany-association-without-join-entity/
