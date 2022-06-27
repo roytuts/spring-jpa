@@ -11,7 +11,7 @@ import com.roytuts.spring.data.jpa.natve.query.model.Event;
 public interface SpringDataJpaNativeQueryRepository extends JpaRepository<Event, Integer> {
 
 	@Query(value = "SELECT e.id, e.title, e.url, e.clasz, UNIX_TIMESTAMP(start_date)*1000 as start, UNIX_TIMESTAMP(end_date)*1000 as end FROM event e", nativeQuery = true)
-	public List<com.roytuts.spring.data.jpa.natve.query.repository.SpringDataJpaNativeQueryRepository.Event> getEvents();
+	public List<Event> getEvents();
 
 	public interface Event {
 
