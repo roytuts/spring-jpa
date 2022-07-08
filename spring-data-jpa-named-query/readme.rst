@@ -1,1 +1,1 @@
-You can go through the tutorial https://www.roytuts.com/spring-data-jpa-namedquery-and-namedqueries-example/
+Please follow the tutorial https://roytuts.com/spring-data-jpa-namedquery-and-namedqueries-example/
