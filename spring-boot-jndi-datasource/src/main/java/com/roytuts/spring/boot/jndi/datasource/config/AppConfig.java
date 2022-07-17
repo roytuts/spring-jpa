@@ -62,8 +62,8 @@ public class AppConfig {
 				// resource.setProperty("username", env.getProperty("password"));
 				resource.setProperty("driverClassName", databaseProperties().getDriverClassName());
 				resource.setProperty("url", databaseProperties().getUrl());
-				resource.setProperty("password", databaseProperties().getUsername());
-				resource.setProperty("username", databaseProperties().getPassword());
+				resource.setProperty("username", databaseProperties().getUsername());
+				resource.setProperty("password", databaseProperties().getPassword());
 
 				context.getNamingResources().addResource(resource);
 			}
