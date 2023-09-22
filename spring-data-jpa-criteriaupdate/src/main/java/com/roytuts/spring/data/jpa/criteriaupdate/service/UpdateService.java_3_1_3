@@ -1,0 +1,34 @@
+package com.roytuts.spring.data.jpa.criteriaupdate.service;
+
+import org.springframework.stereotype.Service;
+
+import com.roytuts.spring.data.jpa.criteriaupdate.entity.Product;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaUpdate;
+import jakarta.persistence.criteria.Root;
+import jakarta.transaction.Transactional;
+
+@Service
+public class UpdateService {
+
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	@Transactional
+	public void updateBulkProducts(final String productName, final double price) {
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+
+		CriteriaUpdate<Product> criteriaUpdate = criteriaBuilder.createCriteriaUpdate(Product.class);
+
+		Root<Product> root = criteriaUpdate.from(Product.class);
+
+		criteriaUpdate.set("price", price);
+		criteriaUpdate.where(criteriaBuilder.equal(root.get("name"), productName));
+
+		entityManager.createQuery(criteriaUpdate).executeUpdate();
+	}
+
+}
