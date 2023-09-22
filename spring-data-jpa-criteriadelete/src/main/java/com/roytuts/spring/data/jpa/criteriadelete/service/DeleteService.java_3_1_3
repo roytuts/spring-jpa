@@ -1,0 +1,33 @@
+package com.roytuts.spring.data.jpa.criteriadelete.service;
+
+import org.springframework.stereotype.Service;
+
+import com.roytuts.spring.data.jpa.criteriadelete.entity.Product;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaDelete;
+import jakarta.persistence.criteria.Root;
+import jakarta.transaction.Transactional;
+
+@Service
+public class DeleteService {
+
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	@Transactional
+	public void deleteBulkProducts(final String productName) {
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+
+		CriteriaDelete<Product> criteriaDelete = criteriaBuilder.createCriteriaDelete(Product.class);
+
+		Root<Product> root = criteriaDelete.from(Product.class);
+
+		criteriaDelete.where(criteriaBuilder.equal(root.get("name"), productName));
+
+		entityManager.createQuery(criteriaDelete).executeUpdate();
+	}
+
+}
