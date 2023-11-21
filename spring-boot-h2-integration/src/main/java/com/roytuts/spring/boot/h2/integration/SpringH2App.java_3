@@ -1,0 +1,13 @@
+package com.roytuts.spring.boot.h2.integration;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringH2App {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringH2App.class, args);
+	}
+
+}
