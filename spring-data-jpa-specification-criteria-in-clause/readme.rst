@@ -1,1 +1,1 @@
-You can read tutorial https://www.roytuts.com/spring-data-jpa-specification-criteria-query/
+Please follow the tutorial https://roytuts.com/spring-data-jpa-specification-criteria-query/
