@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Upload Image File</title>
+</head>
+<body>
+	<p><a th:href="@{'/'}" title="Images">List Of Images</a></p>
+	
+    <h2>Upload An Image File</h2>
+
+	<div th:if="${msg != null}" th:text="${msg}"></div>
+
+	<form enctype="multipart/form-data"	th:action="@{/upload/image}" method='POST'>
+		<p>Select Image: <input type="file" name="image"/></p>
+		<p><input value="Upload" type="submit"/></p>
+	</form>
+</body>
+</html>
