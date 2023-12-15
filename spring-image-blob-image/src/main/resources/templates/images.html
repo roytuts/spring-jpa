@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Display Image Files</title>
+</head>
+<body>
+	<p><a th:href="@{'/uploadImage'}" title="Upload A New Image">Upload An Image</a></p>
+
+	<div th:if="${msg != null}" th:text="${msg}"></div>
+	
+	<div th:if="${imageList.size() > 0}">
+		<h2>List of Images</h2>
+		
+		<table cellpadding="5" cellspacing="5" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Image</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="img : ${imageList}">
+					<td>[[${img.id}]]</td>
+					<td>[[${img.name}]]</td>
+					<td><img th:src="@{'data:${img.getMimeType()};base64,'+${img.generateBase64Image()}}" alt="picture" height="200" width="250"></td>
+					<td>
+						<a th:href="@{'/download/image/' + ${img.id}}" title="Download">Download</a>
+						<a th:href="@{'/delete/image/' + ${img.id}}" onclick="return confirm('Do you really want to delete?')" title="Delete">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
