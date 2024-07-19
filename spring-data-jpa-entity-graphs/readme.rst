@@ -1,1 +1,1 @@
-You can go through the tutorial https://www.roytuts.com/spring-data-jpa-entity-graphs/
+Please follow the tutorial https://roytuts.com/spring-data-jpa-entity-graphs/
