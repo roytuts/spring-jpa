@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.roytuts.springboot.datajpa.composite.primarykey.entity.User;
@@ -50,7 +50,7 @@ public class App implements CommandLineRunner {
 
 		newUser.setUserPKey(new UserPKey("First Name", "Last"));
 		userRepository.save(newUser);
-		
+
 		users = userRepository.findAll();
 		users.stream().forEach(u -> System.out.println(u));
 		System.out.println("---------------------------------------------------------------------");
@@ -60,8 +60,8 @@ public class App implements CommandLineRunner {
 
 		users = userRepository.findAll();
 		users.stream().forEach(u -> System.out.println(u));
-		//System.out.println("---------------------------------------------------------------------");
-		//System.out.println();
+		// System.out.println("---------------------------------------------------------------------");
+		// System.out.println();
 		System.out.println("=====================================================================");
 	}
 
