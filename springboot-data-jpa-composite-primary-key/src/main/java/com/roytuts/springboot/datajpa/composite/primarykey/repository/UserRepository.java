@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.roytuts.springboot.datajpa.composite.primarykey.entity.User;
 import com.roytuts.springboot.datajpa.composite.primarykey.entity.UserPKey;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, UserPKey> {
 
 	User findByUserPKey(UserPKey userPKey);
 
