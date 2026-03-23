@@ -2,8 +2,6 @@ package com.roytuts.springboot.datajpa.composite.primarykey.entity;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Entity
